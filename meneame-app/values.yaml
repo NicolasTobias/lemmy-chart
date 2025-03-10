@@ -19,7 +19,7 @@ lemmy:
   image:
     repository: dessalines/lemmy
     pullPolicy: IfNotPresent
-    tag: "0.19.9"
+    tag: "0.17.4"
   config:
     rustLog: "warn,lemmy_server=warn,lemmy_api=warn,lemmy_api_common=warn,lemmy_api_crud=warn,lemmy_apub=warn,lemmy_db_schema=warn,lemmy_db_views=warn,lemmy_db_views_actor=warn,lemmy_db_views_moderator=warn,lemmy_routes=warn,lemmy_utils=warn,lemmy_websocket=warn"
     rustBacktrace: "full"
@@ -61,7 +61,7 @@ lemmy-ui:
   image:
     repository: dessalines/lemmy-ui
     pullPolicy: IfNotPresent
-    tag: "0.19.9"
+    tag: "0.17.4"
   config:
     externalHost: lemmy.level5.dev
     https: false
