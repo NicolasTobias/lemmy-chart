@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1                                             
+kind: Ingress                                                                
+metadata:                                                                    
+  name: lemmy-ingress                                                         
+  namespace: lemmy                                                        
+spec:                                                                        
+  ingressClassName: haproxy                                                  
+  rules:                                                                     
+  - host: lemmy.level5.dev                                                     
+    http:                                                                    
+      paths:                                                                 
+      - backend:                                                             
+          service:                                                           
+            name: meneame-lemmy-nginx                                           
+            port:                                                            
+              number: 80                                                     
+        path: /                                                              
+        pathType: Prefix                                                     
