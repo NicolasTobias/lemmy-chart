@@ -111,10 +111,9 @@ pictrs:
     pullPolicy: IfNotPresent
     tag: "0.4.0-rc.3"
   storage:
-    kind: hostvol
-    hostvol:
-      path: /opt/lemmy/pictrs
+    kind: persistentVolumeClaim
     pvc:
+      storageClassName: "truenas-nfs-csi-retain"
       size: 16Gi
   config:
     opentelemetry: ""
@@ -148,8 +147,9 @@ postgres:
   enabled: true
   poolSize: 10
   storage:
-    kind: openebs-hostpath
+    kind: "persistentVolumeClaim"
     pvc:
+      storageClassName: "openebs-hostpath"
       size: 16Gi
   image:
     repository: postgres
